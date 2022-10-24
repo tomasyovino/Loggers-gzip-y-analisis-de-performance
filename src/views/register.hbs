@@ -1,0 +1,59 @@
+<div class="container my-5">
+  <div class="jumbotron">
+
+    <h1>REGISTRARSE</h1>
+    <br />
+    <form
+      class="form"
+      action="/api/register"
+      method="post"
+      role="form"
+      autocomplete="off"
+    >
+
+      <div class="form-group">
+        <input
+          id="username"
+          name="username"
+          placeholder="Usuario"
+          class="form-control"
+          type="text"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <input
+          id="password"
+          name="password"
+          placeholder="Contraseña"
+          class="form-control"
+          type="password"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <input
+          id="direction"
+          name="direction"
+          placeholder="Dirección"
+          class="form-control"
+          type="text"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <input class="btn btn-success my-3" type="submit" value="Registrarse" />
+      </div>
+    </form>
+
+    <hr />
+
+    <div class="text-left">
+      <button class="btn btn-success my-3" onclick="location.href = '/api/login'">Iniciar Sesión</button>
+    </div>
+
+  </div>
+</div>

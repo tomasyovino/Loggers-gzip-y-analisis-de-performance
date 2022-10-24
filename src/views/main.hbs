@@ -1,0 +1,46 @@
+<div class="container text-center my-3">
+  <div class="jumbotron" style="background-color: green;color: white;">
+    <h1>USER OK LOGIN!</h1>
+    <h2><i>Bienvenido {{data.username}}</i></h2>
+    <br />
+    <h3>dirección: {{data.direction}}</h3>
+    <button
+      class="btn btn-danger my-5"
+      onclick="location.href='/api/logout'"
+    >SALIR</button>
+  </div>
+
+  <div class="container w-75 mt-5 p-4 bg-dark text-white">
+    <h2 class="mb-4">Agregar producto</h2>
+    <!--<form action="/productos" method="post">-->
+    <form action="/api" method="POST" class="d-flex flex-column">
+      <input class="form-control mb-3" type="text" placeholder="Nombre del producto" id="title" name="title">
+      <input class="form-control mb-3" type="number" placeholder="Precio del producto" id="price" name="price">
+      <input class="form-control mb-3" type="text" placeholder="Imágen del producto (url)" id="thumbnail" name="thumbnail">
+      <div class="d-flex justify-content-end">
+        <input class="text-white btn btn-warning" type="submit" value="Agregar">
+      </div>
+    </form>
+  </div>
+    
+  <div class="container mt-5">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Imágen</th>
+        </tr>
+      </thead>
+      <tbody class="productsList">
+        {{#each productData}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{price}}</td>
+            <td><img class="img-thumbnail" style="height: 75px; width: 75px;" src="{{thumbnail}}" /></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
